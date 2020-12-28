@@ -1,5 +1,7 @@
 # JavaScriptPasswordGenerator
 
+https://pythonidaer.github.io/JavaScriptPasswordGenerator/
+
 UPDATES:
 
 1. Still needs a README.md
