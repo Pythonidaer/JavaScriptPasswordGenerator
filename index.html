@@ -18,7 +18,7 @@
             </header>
 
             <!-- Modal alert for when user doesn't select a character type-->
-            <div id="terms" class="modal">
+            <div id="userError" class="modal">
                 <div class="modal-content">
                     <h2 class="red darken-4">Error: No Character Types Selected</h2>
                     <p class="flow-text">Please select one or more <strong>character types</strong> to generate a random password with.</p>
@@ -96,7 +96,7 @@
                             <div class="centricated">
                                 <!-- Button to Generate Randomized Password -->
                                 <div class="inner center-align">
-                                    <button id="generateBtn" type="button" onclick="generatePassword()" class="btn-large cyan-custom waves-effect waves-light" href="#terms">
+                                    <button id="generateBtn" type="button" onclick="generatePassword()" class="btn-large cyan-custom waves-effect waves-light" href="#userError">
                                         <i class="material-icons right">add</i>Generate!
                                     </button>
                                 </div>
