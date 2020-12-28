@@ -1,65 +1,255 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="Homework 2: Responsive Portfolio Homepage">
-    <meta name="keywords" content="HTML, CSS, Accessibility, SEO, Bootstrap">
-    <meta name="author" content="Jonathan Hammond">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link  
-    href="assets/css/stylesNew.css"
-    rel="stylesheet" />
-    <!-- Font Awesome -->
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    rel="stylesheet"/>
-    <!-- Google Fonts -->
-    <link
-    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-    rel="stylesheet"/>
-    <!-- MDB -->
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css"
-    rel="stylesheet"/>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <title>PW Generator Materialize</title>
+        <style>
+            body {
+                background: url(https://images.pexels.com/photos/1571442/pexels-photo-1571442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat;
+    height: 100%;
+            }
+            h2 {
+                display: block;
+                padding: 15px;
+                font-size: 16px;
+                /* background-color: #81d4fa; this light snow blue is beautiful but too light */
+                background-color: #37474f;
+                color: #ffffff;
+                font-weight: bold;
+                margin-bottom: 0;
+            }
 
-    <title>Password Generator</title>
+            .modal-close {
+                margin: 0 !important;
+            }
 
-    <!-- Font Awesome for Carousel Arrows -->
-    <script src="https://kit.fontawesome.com/8af330bb1e.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <div class="wrapper">
-        <header>
-          <h1>Password Generator</h1>
-        </header>
-        <div class="card">
-          <div class="card-header">
-            <h2>Generate a Password</h2>
-          </div>
-          <div class="card-body">
-            <textarea
-              readonly
-              id="password"
-              placeholder="Your Secure Password"
-              aria-label="Generated Password"
-            ></textarea>
-          </div>
-          <div class="card-footer">
-            <button id="generate" class="btn bg-dark text-light">Generate Password</button>
-          </div>
+            .modal-footer-inner {
+                padding: 15px 24px !important;
+                height: revert !important;
+            }
+
+            [type="checkbox"].filled-in:checked + span:not(.lever):after {
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #4db6ac;
+  background-color: #006064;
+  z-index: 0;
+}
+
+
+            input[type=range]::-webkit-slider-thumb {
+    background-color: #006064;
+  }
+  input[type=range]::-moz-range-thumb {
+    background-color: #006064;
+  }
+  input[type=range]::-ms-thumb {
+    background-color: #006064;
+  }
+
+  /***** These are to edit the thumb and the text inside the thumb *****/
+  input[type=range] + .thumb {
+    background-color:#006064 ;
+  }
+  input[type=range] + .thumb.active .value {
+    color: #dedede;
+  }
+
+  .card {
+      min-height: 150px;
+  }
+
+  div.inner {
+    padding: 0 15px 0 15px;
+}
+
+    .row {
+        margin-bottom: 0;
+    }
+
+    p {
+        overflow-wrap: break-word;
+    }
+
+.centricated {
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+    justify-content: center;
+}
+
+.cyan-custom {
+    background-color: #006064;
+}
+
+  button:hover, button:active, button:focus {
+    background-color: #4db6ac     !important;
+}
+
+.modal-close.btn:hover,
+.modal-close.btn:active,
+.modal-close.btn:focus {
+    background-color: #263238       !important;
+}
+
+@media all and (max-width: 700px) {
+    h1 {
+        font-size: 2.92rem;
+    }
+}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header class="row center-align">
+                <h1>Random Password Generator</h1>
+            </header>
+
+            <!-- Modal alert for when user doesn't select a character type-->
+            <div id="terms" class="modal">
+                <div class="modal-content">
+                    <h2 class="red darken-4">Error: No Character Types Selected</h2>
+                    <p class="flow-text">Please select one or more <strong>character types</strong> to generate a random password with.</p>
+                    
+                </div>
+                <div class="modal-footer modal-footer-inner">
+                    <a href="#" class="modal-close btn cyan darken-4">I Understand</a>
+                </div>
+            </div>
+
+            <!-- Password Gen UI -->
+            <div class="row">
+                <form>
+                    <div class="col s12 m12 l4">
+                        <div class="card">
+                            <!-- Step 1 -->
+                            <h2> Pick 1+ Character Type</h2>
+                            <div class="centricated">
+                                <!-- Special Characters -->
+                                <div class="inner">
+                                    <div class="row">
+                                        <div class="col s6 m6 l6">
+                                            <label for="specialChar">
+                                                <input type="checkbox" class="filled-in my-checkbox" value="Special" id="specialChar">
+                                                <span>Special</span>
+                                            </label>
+                                        </div>
+                            
+                                        <!-- Numeric Characters -->
+                                        <div class="col s6 m6 l6">
+                                            <label for="numericChar">
+                                                <input type="checkbox" class="filled-in my-checkbox" value="Numeric" id="numericChar">
+                                                <span>Numeric</span>
+                                            </label>
+                                        </div>
+                            
+                                        <!-- Lowercase Characters -->
+                                        <div class="col s6 m6 l6">
+                                            <label for="lowercaseChar">
+                                                <input type="checkbox" class="filled-in my-checkbox" value="Lowercase" id="lowercaseChar">
+                                                <span>Lowercase</span>
+                                            </label>
+                                        </div>
+                            
+                                        <!-- Uppercase Characters -->
+                                        <div class="col s6 m6 l6">
+                                            <label for="uppercaseChar">
+                                                <input type="checkbox" class="filled-in my-checkbox" value="Uppercase" id="uppercaseChar">
+                                                <span>Uppercase</span>
+                                            </label>
+                                        </div>
+                                    </div>                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col s12 m12 l4">
+                        <div class="card">
+                            <!-- Step 2 -->
+                            <h2>Pick 8 - 128 Characters</h2>
+                            <div class="inner centricated">
+                                <p class="range-field">
+                                    <!-- Character Range 8-128 -->    
+                                    <input type="range" id="passwordLength" min="8" max="128">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col s12 m12 l4">
+                        <div class="card">
+                            <!-- Step 3 -->
+                            <h2>Generate</h2>
+                            <div class="centricated">
+                                <!-- Button to Generate Randomized Password -->
+                                <div class="inner center-align">
+                                    <button id="generateBtn" type="button" onclick="generatePassword()" class="btn-large cyan-custom waves-effect waves-light" href="#terms">
+                                        <i class="material-icons right">add</i>Generate!
+                                    </button>
+                                </div>
+                            </div>
+  
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <div class="card center-align">
+                        <!-- Display Password -->
+                        <h2>Your Password</h2>
+                            <div class="centricated">
+                                <!-- Text Content to be Replaced with Randomized Password -->
+                                <div class="inner">
+                                    <p id="completedPassword" class="flow-text">Nothing to see here yet!</p>
+                                </div>
+
+                            </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
 
-    <!-- Custom JavaScript -->
-    <script src="assets/scripts/behavior.js"></script>
-    <!-- MDB -->
-    <script
-  type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"
-></script>
-  </body>
+    
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="assets/scripts/behavior.js"></script> 
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('.modal').modal();
+            });
+        </script>
+    </body>
 </html>
+<!-- 
+    Sources:
+    Materialize CSS Tutorial: https://www.youtube.com/watch?v=j6y1UVxr3jg&list=PL4cUxeGkcC9gGrbtvASEZSlFEYBnPkmff&index=7
+
+    Range Slider Issue: https://github.com/Dogfalo/materialize/issues/6036
+
+    Styling the Range Slider: https://stackoverflow.com/questions/40534973/changing-the-color-of-the-range-slider-in-materializecss
+
+
+    Background Images: https://www.pexels.com/photo/a-clear-sky-at-night-2885320/
+
+    How to wrap password: https://css-tricks.com/almanac/properties/o/overflow-wrap/
+
+    Styling Materialize Checkboxes: https://www.jquery-az.com/materialize/demo.php?ex=57.0_3
+
+    Custom Button Color: https://materializecss.com/color.html
+
+    How to add a modal: https://www.youtube.com/watch?v=OImBxPnTLZw&list=PL4cUxeGkcC9gGrbtvASEZSlFEYBnPkmff&index=15
+
+    Dark mode: https://www.youtube.com/watch?v=ZKXv_ZHQ654
+ -->

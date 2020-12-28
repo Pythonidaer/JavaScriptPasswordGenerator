@@ -1,0 +1,61 @@
+body {
+    /* Background pattern from Toptal Subtle Patterns */
+    background-image: url("funky-lines.png");
+    height: 100%;
+  }
+  
+  h2.panel-title {
+    display: block;
+    padding: 15px;
+    font-size: 16px;
+    background-color: #6A00FF;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  div.inner {
+    padding: 0 15px 15px 15px;
+    word-wrap: break-word;
+  }
+  
+  h2.paneltitlegray {
+    background-color: #545454;
+  }
+  
+  .card {
+    min-height: 150px;
+  }
+  
+  button.mycolor {
+    background-color: #6A00FF;
+  }
+  
+  button.mycolor:hover, button.mycolor:active, button.mycolor:focus {
+    background-color: #a666ff;
+  }
+  
+  input[type=range]::-webkit-slider-thumb {
+    background-color: #6A00FF;
+  }
+  
+  input[type=range]::-moz-range-thumb {
+    background-color: #6A00FF;
+  }
+  
+  input[type=range]::-ms-thumb {
+    background-color: #6A00FF;
+  }
+  
+  input[type=range] + .thumb {
+    background-color: #bababa;
+  }
+  
+  input[type=range] + .thumb.active .value {
+    color: #ffffff;
+  }
+  
+  .my-checkbox[type="checkbox"].filled-in:checked + span:not(.lever):after {
+    border: 2px solid #6A00FF;
+    background-color: #6A00FF;
+  }
+  /*# sourceMappingURL=style.css.map */

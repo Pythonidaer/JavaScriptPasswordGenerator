@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirwin Sample</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="assets/kirwinCSS/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="assets/kirwinCSS/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <style type="text/css">
+        @font-face {
+          font-weight: 400;
+          font-style:  normal;
+          font-family: 'Circular-Loom';
+        
+          src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Book-cd7d2bcec649b1243839a15d5eb8f0a3.woff2') format('woff2');
+        }
+        
+        @font-face {
+          font-weight: 500;
+          font-style:  normal;
+          font-family: 'Circular-Loom';
+        
+          src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Medium-d74eac43c78bd5852478998ce63dceb3.woff2') format('woff2');
+        }
+        
+        @font-face {
+          font-weight: 700;
+          font-style:  normal;
+          font-family: 'Circular-Loom';
+        
+          src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Bold-83b8ceaf77f49c7cffa44107561909e4.woff2') format('woff2');
+        }
+        
+        @font-face {
+          font-weight: 900;
+          font-style:  normal;
+          font-family: 'Circular-Loom';
+        
+          src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Black-bf067ecb8aa777ceb6df7d72226febca.woff2') format('woff2');
+        }</style>
+</head>
+<body cz-shortcut-listen="true">
+    <div class="container">
+      <div class="row center-align">
+        <div class="col s12 m12 l12">
+          <h1>Password Generator</h1>
+          <p>Need a password? Use the generator below to make one!</p>
+        </div>
+      </div>
+  
+      <!-- Password Gen UI -->
+      <div class="row">
+        <form>
+          <div class="col s12 m12 l5">
+            <div class="card">
+              <h2 class="panel-title">Step 1: Pick 1+ Character Type</h2>
+              <div class="inner">
+                <div class="row">
+                  <div class="col s6 m6 l6">
+                    <label>
+                      <input type="checkbox" class="filled-in my-checkbox" value="Special" id="specialChar">
+                      <span>Special</span>
+                    </label>
+                  </div>
+                  <div class="col s6 m6 l6">
+                    <label>
+                      <input type="checkbox" class="filled-in my-checkbox" value="Numeric" id="numericChar">
+                      <span>Numeric</span>
+                    </label>
+                  </div>
+                  <div class="col s6 m6 l6">
+                    <label>
+                      <input type="checkbox" class="filled-in my-checkbox" value="Lowercase" id="lowercaseChar">
+                      <span>Lowercase</span>
+                    </label>
+                  </div>
+                  <div class="col s6 m6 l6">
+                    <label>
+                      <input type="checkbox" class="filled-in my-checkbox" value="Uppercase" id="uppercaseChar">
+                      <span>Uppercase</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m12 l4">
+            <div class="card">
+              <h2 class="panel-title">Step 2: Pick 8 - 128 Characters</h2>
+              <div class="inner">
+                <p class="range-field">
+                  <input type="range" name="characters" id="passwordLength" min="8" max="128"><span class="thumb"><span class="value"></span></span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m12 l3">
+            <div class="card">
+              <h2 class="panel-title">Step 3: Generate</h2>
+              <div class="inner center-align">
+                <button type="button" onclick="password()" class="btn-large mycolor">Generate!</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+  
+      <!-- Display Password -->
+      <div class="row">
+        <div class="col s12 m12 l12">
+          <div class="card center-align">
+            <h2 class="panel-title paneltitlegray passwordpanel">Your Password</h2>
+            <div class="inner">
+              <p id="completedPassword">Nothing to see here yet!</p>
+              <button type="button" onclick="copyPassword()" class="waves-effect waves-light btn-large disabled copyBtn mycolor">Copy Password!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Modal for Error -->
+      <div id="modal1" class="modal" tabindex="0">
+        <div class="modal-content">
+          <h4>Hold On!</h4>
+          <p>Select alteast one Character Type to generate your password.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Okay</a>
+        </div>
+      </div>
+  
+    </div>
+    
+  
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="assets/kirwinJS/materialize.js"></script>
+    <script src="assets/kirwinJS/init.js"></script>
+    <script src="assets/kirwinJS/script.js"></script>
+  
+  
+  </body>
+</html>

@@ -1,0 +1,65 @@
+$primary-color: #6A00FF; 
+$secondary-color: #C04CFD;
+$grey: #545454;
+$light-color: #ffffff;
+$default-padding: 15px;
+
+  body {
+    /* Background pattern from Toptal Subtle Patterns */
+    background-image: url("../images/funky-lines.png");
+    height: 100%;
+}
+
+h2.panel-title {
+    display: block;
+    padding: 15px;
+    font-size: 16px;
+    background-color: $primary-color;
+    color: $light-color;
+    font-weight: bold;
+}
+
+div.inner {
+    padding: 0 $default-padding $default-padding $default-padding;
+    word-wrap: break-word;
+}
+
+h2.paneltitlegray {
+    background-color: $grey;
+}
+
+.card {
+    min-height: 150px;
+}
+
+button.mycolor {
+    background-color: $primary-color;
+    &:hover, &:active, &:focus {
+        background-color:lighten($primary-color, 20%);  
+    }
+}
+
+input[type=range]::-webkit-slider-thumb {
+    background-color: $primary-color;
+}
+  
+input[type=range]::-moz-range-thumb {
+    background-color: $primary-color;
+}
+  
+input[type=range]::-ms-thumb {
+    background-color: $primary-color;
+}
+
+  input[type=range] + .thumb {
+    background-color: lighten($grey, 40%);  
+}
+
+input[type=range] + .thumb.active .value {
+    color: $light-color;
+}
+
+.my-checkbox[type="checkbox"].filled-in:checked + span:not(.lever):after {
+    border: 2px solid $primary-color;
+    background-color: $primary-color;
+}
