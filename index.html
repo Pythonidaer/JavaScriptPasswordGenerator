@@ -8,104 +8,8 @@
 
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="assets/css/styles.css">
         <title>PW Generator Materialize</title>
-        <style>
-            body {
-                background: url(https://images.pexels.com/photos/1571442/pexels-photo-1571442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat;
-                background-size: cover;
-                height: 100%;
-            }
-            h2 {
-                display: block;
-                padding: 15px;
-                font-size: 16px;
-                /* background-color: #81d4fa; this light snow blue is beautiful but too light */
-                background-color: #37474f;
-                color: #ffffff;
-                font-weight: bold;
-                margin-bottom: 0;
-            }
-
-            .modal-close {
-                margin: 0 !important;
-            }
-
-            .modal-footer-inner {
-                padding: 15px 24px !important;
-                height: revert !important;
-            }
-
-            [type="checkbox"].filled-in:checked + span:not(.lever):after {
-  top: 0;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #4db6ac;
-  background-color: #006064;
-  z-index: 0;
-}
-
-
-            input[type=range]::-webkit-slider-thumb {
-    background-color: #006064;
-  }
-  input[type=range]::-moz-range-thumb {
-    background-color: #006064;
-  }
-  input[type=range]::-ms-thumb {
-    background-color: #006064;
-  }
-
-  /***** These are to edit the thumb and the text inside the thumb *****/
-  input[type=range] + .thumb {
-    background-color:#006064 ;
-  }
-  input[type=range] + .thumb.active .value {
-    color: #dedede;
-  }
-
-  .card {
-      min-height: 150px;
-  }
-
-  div.inner {
-    padding: 0 15px 0 15px;
-}
-
-    .row {
-        margin-bottom: 0;
-    }
-
-    p {
-        overflow-wrap: break-word;
-    }
-
-.centricated {
-    display: flex;
-    flex-direction: column;
-    min-height: 100px;
-    justify-content: center;
-}
-
-.cyan-custom {
-    background-color: #006064;
-}
-
-  button:hover, button:active, button:focus {
-    background-color: #4db6ac     !important;
-}
-
-.modal-close.btn:hover,
-.modal-close.btn:active,
-.modal-close.btn:focus {
-    background-color: #263238       !important;
-}
-
-@media all and (max-width: 700px) {
-    h1 {
-        font-size: 2.92rem;
-    }
-}
-        </style>
     </head>
     <body>
         <div class="container">
@@ -253,4 +157,18 @@
     How to add a modal: https://www.youtube.com/watch?v=OImBxPnTLZw&list=PL4cUxeGkcC9gGrbtvASEZSlFEYBnPkmff&index=15
 
     Dark mode: https://www.youtube.com/watch?v=ZKXv_ZHQ654
+
+    https://www.cssportal.com/style-input-range/
+    How to style range circle:
+    input[type=range]::-webkit-slider-thumb {
+  box-shadow: 3px 3px 3px #00AA00;
+  border: 2px solid #83E584;
+  height: 23px;
+  width: 23px;
+  border-radius: 23px;
+  background: #439643;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
  -->
