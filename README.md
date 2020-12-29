@@ -5,11 +5,9 @@ https://pythonidaer.github.io/JavaScriptPasswordGenerator/
 UPDATES:
 
 1. Still needs a README.md
-2. Range slider needs a bigger circle on mobile
 3. Working on a Medium article
-4. Working on Dark Mode
+4. Needs on Dark Mode
 5. JavaScript conditionals can be re-factored into a functional component
-6. Internal JavaScript can be separated
 
 Sources:
     How to make input type=range accessible with label for: https://web.dev/label/?utm_source=lighthouse&utm_medium=devtools
@@ -33,8 +31,10 @@ Sources:
 
     Dark mode: https://www.youtube.com/watch?v=ZKXv_ZHQ654
 
-    https://www.cssportal.com/style-input-range/
-    How to style range circle:
+    How to fix background-size: cover https://css-tricks.com/forums/topic/background-image-height-problem-not-fitting-to-the-screen/
+
+    How to style range circle:     https://www.cssportal.com/style-input-range/
+
     input[type=range]::-webkit-slider-thumb {
   box-shadow: 3px 3px 3px #00AA00;
   border: 2px solid #83E584;
@@ -47,4 +47,3 @@ Sources:
   margin-top: -7px;
 }
 
-How to fix background-size: cover https://css-tricks.com/forums/topic/background-image-height-problem-not-fitting-to-the-screen/

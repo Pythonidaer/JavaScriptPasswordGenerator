@@ -58,76 +58,91 @@ h2 {
 
 /* custom style to override Materialize checkbox styles */
 [type="checkbox"].filled-in:checked + span:not(.lever):after {
-top: 0;
-width: 20px;
-height: 20px;
-border: 2px solid #81d4fa;
-background-color: #006064;
-z-index: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #006064;
+    background-color: #006064;
+    z-index: 0;
+}
+/* adds hover shadow to checkbox */
+label [type="checkbox"].filled-in:hover + span:not(.lever):after,
+label [type="checkbox"].filled-in:focus + span:not(.lever):after {
+    box-shadow: 2px 2px 3px #9e9e9e !important;
 }
 
 /* for some reason only works separately - this changes color of the slider circle */
 input[type=range]::-webkit-slider-thumb {
-background-color: #006064;
+    background-color: #006064;
 }
 input[type=range]::-moz-range-thumb {
-background-color: #006064;
+    background-color: #006064;
 }
 input[type=range]::-ms-thumb {
-background-color: #006064;
+    background-color: #006064;
 }
 
 /* overrides the thumb and the text inside the thumb */
 input[type=range] + .thumb {
-background-color:#006064 ;
+    background-color:#006064 ;
 }
 input[type=range] + .thumb.active .value {
-color: #dedede;
+    color: #dedede;
 }
+
+input[type=range]::-webkit-slider-thumb {
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    background: #006064;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -13px;
+  }
 
 /* increases height of each box */
 .card {
-min-height: 150px;
+    min-height: 150px;
 }
 
 /* adds side padding */
 div.inner {
-padding: 0 15px 0 15px;
+    padding: 0 15px 0 15px;
 }
 
 /* overrides Materialize spacing */
 .row {
-margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 /* so very longer passwords don't break out of the box */
 p {
-overflow-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* centers box exactly horizontally and vertically */
 .centricated {
-display: flex;
-flex-direction: column;
-min-height: 100px;
-justify-content: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+    justify-content: center;
 }
 
 /* overrides Materialize cyan color */
 .cyan-custom {
-background-color: #006064;
+    background-color: #006064;
 }
 
 /* custom button:hover color */
 button:hover, button:active, button:focus {
-background-color: #4db6ac     !important;
+    background-color: #4db6ac     !important;
 }
 
 /* overrides Materialize grey color */
 .modal-close.btn:hover,
 .modal-close.btn:active,
 .modal-close.btn:focus {
-background-color: #263238       !important;
+    background-color: #263238       !important;
 }
 
 /* overrides Materialize heading 1 which is way too big on mobile for this project */
