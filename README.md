@@ -35,15 +35,3 @@ Sources:
 
     How to style range circle:     https://www.cssportal.com/style-input-range/
 
-    input[type=range]::-webkit-slider-thumb {
-  box-shadow: 3px 3px 3px #00AA00;
-  border: 2px solid #83E584;
-  height: 23px;
-  width: 23px;
-  border-radius: 23px;
-  background: #439643;
-  cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: -7px;
-}
-

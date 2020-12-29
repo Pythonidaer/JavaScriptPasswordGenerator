@@ -73,24 +73,6 @@ label [type="checkbox"].filled-in:focus + span:not(.lever):after {
 
 /* for some reason only works separately - this changes color of the slider circle */
 input[type=range]::-webkit-slider-thumb {
-    background-color: #006064;
-}
-input[type=range]::-moz-range-thumb {
-    background-color: #006064;
-}
-input[type=range]::-ms-thumb {
-    background-color: #006064;
-}
-
-/* overrides the thumb and the text inside the thumb */
-input[type=range] + .thumb {
-    background-color:#006064 ;
-}
-input[type=range] + .thumb.active .value {
-    color: #dedede;
-}
-
-input[type=range]::-webkit-slider-thumb {
     height: 30px;
     width: 30px;
     border-radius: 30px;
@@ -99,6 +81,34 @@ input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     margin-top: -13px;
   }
+
+input[type=range]::-moz-range-thumb {
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    background: #006064;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -13px;
+  }
+
+input[type=range]::-ms-thumb {
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    background: #006064;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -13px;
+  }
+
+/* overrides the thumb and the text inside the thumb */
+input[type=range] + .thumb {
+    background-color:#006064 ;
+}
+input[type=range] + .thumb.active .value {
+    color: #dedede;
+}
 
 /* increases height of each box */
 .card {
