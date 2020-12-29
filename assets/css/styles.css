@@ -9,6 +9,10 @@ body {
     background-size: cover;
 }
 
+span {
+    color: #263238;
+}
+
 /* Card header styling courtesy of https://jenniferkirwin.github.io/password-generator2/ */
 h2 {
     display: block;
