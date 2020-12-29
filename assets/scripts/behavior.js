@@ -121,6 +121,8 @@ function generatePassword() {
     generatedPassword = password.join("");
     // Calls function to replace password/textarea text content with the string value of the final password
     writePassword(generatedPassword);
+    // Copies password after generating it
+    copyPassword();
     }
 
 // This will change the text content of a pargraph or textarea element to the password generated above, for display/copy purposes.
@@ -129,6 +131,23 @@ function writePassword(generatedPassword) {
     document.getElementById("completedPassword").placeholder = generatedPassword;
  }
 
+//  Grabs password text, creates a placeholder, pastes text into placeholder, copies placeholder text, and lastly removes placeholder
+ function copyPassword() {
+        let completedPassword = document.getElementById('completedPassword').textContent;
+        let placeholder = document.createElement(`textarea`);
+        document.body.appendChild(placeholder);
+        placeholder.value = completedPassword;
+        placeholder.select();
+        document.execCommand(`copy`);
+        document.body.removeChild(placeholder);
+      };
+
+      
+// When document is ready, this jQuery function will call the modal function.
+$(document).ready(function(){
+        $('.modal').modal();
+        });
+        
 
 
 
