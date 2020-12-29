@@ -1,88 +1,107 @@
+/* So background photo covers entire viewport */
+html, body {
+    min-height: 100%;
+}
+
+/* Background winter snow */
 body {
     background: url(https://images.pexels.com/photos/1571442/pexels-photo-1571442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat;
     background-size: cover;
-    height: 100%;
 }
 
+/* Card header styling courtesy of https://jenniferkirwin.github.io/password-generator2/ */
 h2 {
     display: block;
     padding: 15px;
     font-size: 16px;
-    /* background-color: #81d4fa; this light snow blue is beautiful but too light */
     background-color: #37474f;
     color: #ffffff;
     font-weight: bold;
     margin-bottom: 0;
 }
 
+/* overrides Materialize modal positioning and width */
 .modal {
     top: revert !important;
     max-width: 750px;
 }
 
+/* overrides Materialize spacing so top bar has no outer white background */
 .modal-content {
     padding: 0 !important;
 }
 
+/* returns spacing so paragraph has padding */
 .modal-content p {
     padding: 0 24px;
 }
 
+/* removes Materialize spacing so button has equal spacing as paragraph */
 .modal-close {
     margin: 0 !important;
 }
 
+/* removes height restriction from modal footer so large padding doesn't cause scroll */
 .modal-footer-inner {
     padding: 24px !important;
     height: revert !important;
 }
 
+/* overrides Materialize background darkness to make a bit darker */
+.modal-overlay {
+    opacity: 0.7 !important;
+}
+
+/* custom style to override Materialize checkbox styles */
 [type="checkbox"].filled-in:checked + span:not(.lever):after {
 top: 0;
 width: 20px;
 height: 20px;
-border: 2px solid #4db6ac;
+border: 2px solid #81d4fa;
 background-color: #006064;
 z-index: 0;
 }
 
+/* for some reason only works separately - this changes color of the slider circle */
 input[type=range]::-webkit-slider-thumb {
 background-color: #006064;
 }
-
 input[type=range]::-moz-range-thumb {
 background-color: #006064;
 }
-
 input[type=range]::-ms-thumb {
 background-color: #006064;
 }
 
-/***** These are to edit the thumb and the text inside the thumb *****/
+/* overrides the thumb and the text inside the thumb */
 input[type=range] + .thumb {
 background-color:#006064 ;
 }
-
 input[type=range] + .thumb.active .value {
 color: #dedede;
 }
 
+/* increases height of each box */
 .card {
 min-height: 150px;
 }
 
+/* adds side padding */
 div.inner {
 padding: 0 15px 0 15px;
 }
 
+/* overrides Materialize spacing */
 .row {
 margin-bottom: 0;
 }
 
+/* so very longer passwords don't break out of the box */
 p {
 overflow-wrap: break-word;
 }
 
+/* centers box exactly horizontally and vertically */
 .centricated {
 display: flex;
 flex-direction: column;
@@ -90,26 +109,31 @@ min-height: 100px;
 justify-content: center;
 }
 
+/* overrides Materialize cyan color */
 .cyan-custom {
 background-color: #006064;
 }
 
+/* custom button:hover color */
 button:hover, button:active, button:focus {
 background-color: #4db6ac     !important;
 }
 
+/* overrides Materialize grey color */
 .modal-close.btn:hover,
 .modal-close.btn:active,
 .modal-close.btn:focus {
 background-color: #263238       !important;
 }
 
+/* overrides Materialize heading 1 which is way too big on mobile for this project */
 @media all and (max-width: 700px) {
     h1 {
     font-size: 2.92rem;
     }
 }
 
+/* overrides and increases Materialize modal width by 10% on smaller screens */
 @media only screen and (max-width: 992px) {
     .modal {
         width: 90%;
