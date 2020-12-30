@@ -208,7 +208,7 @@ body {
 .toggle-container {
     display: flex;
     justify-content: flex-end;
-    padding-top: 2rem;
+    padding: 2rem .75rem 0 .75rem;
 }
 
 h2 {
