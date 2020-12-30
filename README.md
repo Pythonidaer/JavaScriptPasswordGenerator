@@ -1,4 +1,5 @@
 # JavaScriptPasswordGenerator
+*My Random Password Generator made with JavaScript and Materialize CSS*
 
 UPDATES:
 
@@ -6,14 +7,11 @@ UPDATES:
 2. JavaScript conditionals can be re-factored into a functional component
 3. Working on a Medium article
 
-# JavaScriptPasswordGenerator
-*My Random Password Generator made with JavaScript and Materialize CSS*
-
 [View Deployed Application Here.](https://pythonidaer.github.io/JavaScriptPasswordGenerator/)
 
 ## Installation
 1. Clone repository to your local device
-2. Folders are structured already, so test by opening the index.html file in your browser. If it looks good, it's working right.
+2. Test by opening the index.html file in your browser. If it looks good, it's working right.
 3. If it does not work, right-click Inspect console to determine if there is an issue with the directories.
 
 ## Usage
