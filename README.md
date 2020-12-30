@@ -1,37 +1,57 @@
 # JavaScriptPasswordGenerator
 
-https://pythonidaer.github.io/JavaScriptPasswordGenerator/
-
 UPDATES:
 
-1. Still needs a README.md
+1. Needs on Dark Mode
+2. JavaScript conditionals can be re-factored into a functional component
 3. Working on a Medium article
-4. Needs on Dark Mode
-5. JavaScript conditionals can be re-factored into a functional component
 
-Sources:
-    How to make input type=range accessible with label for: https://web.dev/label/?utm_source=lighthouse&utm_medium=devtools
+# JavaScriptPasswordGenerator
+*My Random Password Generator made with JavaScript and Materialize CSS*
 
-    Materialize CSS Tutorial: https://www.youtube.com/watch?v=j6y1UVxr3jg&list=PL4cUxeGkcC9gGrbtvASEZSlFEYBnPkmff&index=7
+[View Deployed Application Here.](https://pythonidaer.github.io/JavaScriptPasswordGenerator/)
 
-    Range Slider Issue: https://github.com/Dogfalo/materialize/issues/6036
+## Installation
+1. Clone repository to your local device
+2. Folders are structured already, so test by opening the index.html file in your browser. If it looks good, it's working right.
+3. If it does not work, right-click Inspect console to determine if there is an issue with the directories.
 
-    Styling the Range Slider: https://stackoverflow.com/questions/40534973/changing-the-color-of-the-range-slider-in-materializecss
+## Usage
+This repo is simply a homework assignment. Feel free to inspect the code and notice how I made an accessible and responsive, validated JavaScript Password Randomizer:
+- Checkboxes
+- Range Slider
+- Materialize Modal Alerts
+- Copy Feature
+- Dark Mode
+  
+## Credits
+[Web Dev](https://web.dev/label/?utm_source=lighthouse&utm_medium=devtools) This link from Lighthouse talk me how to make a `input type=range` accessible with `label for`.
 
+[The Net Ninja](https://www.youtube.com/watch?v=j6y1UVxr3jg&list=PL4cUxeGkcC9gGrbtvASEZSlFEYBnPkmff&index=7) Taught me how to utilize Materialize CSS, Containers, Modals, etc.
 
-    Background Images: https://www.pexels.com/photo/a-clear-sky-at-night-2885320/
+[Range Slider Issue](https://github.com/Dogfalo/materialize/issues/6036) Explained why some of the Materialize CSS features were not working for me.
 
-    How to wrap password: https://css-tricks.com/almanac/properties/o/overflow-wrap/
+[Styling the Range Slider](https://stackoverflow.com/questions/40534973/changing-the-color-of-the-range-slider-in-materializecss) Taught me how to change the color of the range slider in Materialize CSS.
 
-    Styling Materialize Checkboxes: https://www.jquery-az.com/materialize/demo.php?ex=57.0_3
+[Pexels](https://www.pexels.com/photo/a-clear-sky-at-night-2885320/) I love getting free photos from this website!
 
-    Custom Button Color: https://materializecss.com/color.html
+[CSS Tricks](https://css-tricks.com/almanac/properties/o/overflow-wrap/) This article taught me how to wrap a long word, so the password did not overflow outside the box.
 
-    How to add a modal: https://www.youtube.com/watch?v=OImBxPnTLZw&list=PL4cUxeGkcC9gGrbtvASEZSlFEYBnPkmff&index=15
+[jQuery A-Z](https://www.jquery-az.com/materialize/demo.php?ex=57.0_3) Here I learned how to add box-shadow to checkboxes.
 
-    Dark mode: https://www.youtube.com/watch?v=ZKXv_ZHQ654
+[Button Color](https://materializecss.com/color.html) Materialize CSS provides a very beautiful and generous palette of color options.
 
-    How to fix background-size: cover https://css-tricks.com/forums/topic/background-image-height-problem-not-fitting-to-the-screen/
+[DesignCourse](https://www.youtube.com/watch?v=ZKXv_ZHQ654) Gary Simon is awesome! He taught me how to set up a Dark Mode toggle on this project.
 
-    How to style range circle:     https://www.cssportal.com/style-input-range/
+[Background Image Sizing](https://css-tricks.com/forums/topic/background-image-height-problem-not-fitting-to-the-screen/) Another great CSS Tricks article that helped me make sure the background-image covered the entire background.
 
+[CSS Portal](https://www.cssportal.com/style-input-range/) This website helped me change the size of the range slider in Materialize CSS.
+  
+## License
+I've chosen an MIT License. Do what you'd like with this material.
+
+#### The Proof
+![Google Lighthouse Perfect Score](assets/images/lighthouse.png)
+
+#### The Website
+![Password Generator](assets/images/generator.png)
