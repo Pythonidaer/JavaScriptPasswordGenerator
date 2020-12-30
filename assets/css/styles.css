@@ -268,7 +268,7 @@ p {
 
 .switch-mode-toggler:checked + .switch-mode-label:after {
 	/* left: calc(100% - 5px); */
-	left: calc(100% - 1px);
+	left: calc(100%);
 	transform: translateX(-100%);
 }
 
