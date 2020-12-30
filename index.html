@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +15,14 @@
     </head>
     <body>
         <div class="container">
+
+            <!-- Light / Dark Mode Toggle -->
+            <div class="toggle-container">
+                <input type="checkbox" id="switch" name="theme" class="switch-mode-toggler" />
+                <label for="switch" class="switch-mode-label">Toggle</label>
+            </div>
+
+
             <header class="row center-align">
                 <h1>Random Password Generator</h1>
             </header>
@@ -133,6 +141,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- Custom JavaSCript -->
         <script src="assets/scripts/behavior.js"></script> 
+        <script src="assets/scripts/darkmode.js"></script> 
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     </body>

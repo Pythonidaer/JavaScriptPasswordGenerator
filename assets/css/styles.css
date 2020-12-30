@@ -5,9 +5,13 @@ html, body {
 
 /* Background winter snow */
 body {
-    background: url(https://images.pexels.com/photos/1571442/pexels-photo-1571442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat;
-    background-size: cover;
+    /* background: url(https://images.pexels.com/photos/1571442/pexels-photo-1571442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat; */
+    /* background-size: cover; */
 }
+
+/* ===================================================================================
+Dark Mode
+=================================================================================== */
 
 span {
     color: #263238;
@@ -167,4 +171,107 @@ button:hover, button:active, button:focus {
     .modal {
         width: 90%;
     }
+}
+
+/* Dark mode */
+html {
+    /* Light version */
+    --bg: url(https://images.pexels.com/photos/1571442/pexels-photo-1571442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat;
+    --bg-toggler: #4db6ac;
+    --bg-headings: #37474f;
+    --color-heading-1: #37474f;
+    --color-heading-2: #ffffff;
+    --color-text: #333333;
+
+    /* Dark version */
+
+}
+
+html[data-theme='dark'] {
+    /* Dark version */
+    --bg: url(https://images.pexels.com/photos/2007139/pexels-photo-2007139.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat;
+    --bg-toggler: #37474f;
+    --bg-headings: #4db6ac;
+    --color-heading-1: #fcfcfc;
+    --color-heading-2: #37474f;
+    --color-text: #333333;
+
+    /* Dark version */
+
+}
+
+body {
+    background: var(--bg);
+    background-size: cover;
+}
+
+h2 {
+    display: block;
+    padding: 15px;
+    font-size: 16px;
+    background-color: var(--bg-headings);
+    color: var(--color-heading-2);
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+p {
+    color: var(--color-text);
+    font-size: 1.1em;
+    line-height: 1.8em;
+    margin-top: 2em;
+}
+
+.switch-mode-toggler[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+.switch-mode-label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 200px;
+	height: 100px;
+	background-color: var(--bg-toggler);
+	display: block;
+	border-radius: 100px;
+	position: relative;
+}
+
+.switch-mode-label:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 90px;
+	height: 90px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+.switch-mode-toggler:checked + .switch-mode-label {
+	background-color: var(--bg-toggler);
+}
+
+.switch-mode-toggler:checked + .switch-mode-label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+.switch-mode-label:active:after {
+	width: 130px;
+}
+
+h1 {
+    color: var(--color-heading-1);
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+    transition: all 500ms !important;
+    transition-delay: 0 !important;
 }
