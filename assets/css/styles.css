@@ -176,7 +176,7 @@ button:hover, button:active, button:focus {
 /* Dark mode */
 html {
     /* Light version */
-    --bg: url(https://images.pexels.com/photos/1571442/pexels-photo-1571442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat;
+    --bg: url(../images/snowlight.jpeg) no-repeat;
     --bg-toggler: #4db6ac;
     --bg-headings: #37474f;
     --color-heading-1: #37474f;
@@ -189,7 +189,7 @@ html {
 
 html[data-theme='dark'] {
     /* Dark version */
-    --bg: url(https://images.pexels.com/photos/2007139/pexels-photo-2007139.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat;
+    --bg: url(../images/snowdark.jpg) no-repeat;
     --bg-toggler: #37474f;
     --bg-headings: #4db6ac;
     --color-heading-1: #fcfcfc;
@@ -203,6 +203,12 @@ html[data-theme='dark'] {
 body {
     background: var(--bg);
     background-size: cover;
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 2rem;
 }
 
 h2 {
@@ -231,8 +237,10 @@ p {
 .switch-mode-label {
 	cursor: pointer;
 	text-indent: -9999px;
-	width: 200px;
-	height: 100px;
+	/* width: 200px; */
+	width: 40px;
+	/* height: 100px; */
+	height: 20px;
 	background-color: var(--bg-toggler);
 	display: block;
 	border-radius: 100px;
@@ -242,10 +250,13 @@ p {
 .switch-mode-label:after {
 	content: '';
 	position: absolute;
-	top: 5px;
-	left: 5px;
-	width: 90px;
-	height: 90px;
+	/* top: 5px; */
+	top: 0;
+	/* left: 5px; */
+	left: 0;
+	/* width: 90px; */
+	width: 20px;
+	height: 20px;
 	background: #fff;
 	border-radius: 90px;
 	transition: 0.3s;
@@ -256,12 +267,14 @@ p {
 }
 
 .switch-mode-toggler:checked + .switch-mode-label:after {
-	left: calc(100% - 5px);
+	/* left: calc(100% - 5px); */
+	left: calc(100% - 1px);
 	transform: translateX(-100%);
 }
 
 .switch-mode-label:active:after {
-	width: 130px;
+	/* width: 130px; */
+	width: 20px;
 }
 
 h1 {
