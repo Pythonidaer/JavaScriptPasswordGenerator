@@ -177,7 +177,7 @@ button:hover, button:active, button:focus {
 html {
     /* Light version */
     --bg: url(../images/snowlight.jpeg) no-repeat;
-    --bg-toggler: #4db6ac;
+    --bg-toggler: #37474f;
     --bg-headings: #37474f;
     --color-heading-1: #37474f;
     --color-heading-2: #ffffff;
@@ -190,7 +190,7 @@ html {
 html[data-theme='dark'] {
     /* Dark version */
     --bg: url(../images/snowdark.jpg) no-repeat;
-    --bg-toggler: #37474f;
+    --bg-toggler: #4db6ac;
     --bg-headings: #4db6ac;
     --color-heading-1: #fcfcfc;
     --color-heading-2: #37474f;
@@ -238,9 +238,9 @@ p {
 	cursor: pointer;
 	text-indent: -9999px;
 	/* width: 200px; */
-	width: 40px;
+	width: 60px;
 	/* height: 100px; */
-	height: 20px;
+	height: 30px;
 	background-color: var(--bg-toggler);
 	display: block;
 	border-radius: 100px;
@@ -255,8 +255,8 @@ p {
 	/* left: 5px; */
 	left: 0;
 	/* width: 90px; */
-	width: 20px;
-	height: 20px;
+	width: 30px;
+	height: 30px;
 	background: #fff;
 	border-radius: 90px;
 	transition: 0.3s;
@@ -274,7 +274,8 @@ p {
 
 .switch-mode-label:active:after {
 	/* width: 130px; */
-	width: 20px;
+	/* width: 20px; */
+	width: 45px;
 }
 
 h1 {
@@ -287,4 +288,20 @@ html.transition *:before,
 html.transition *:after {
     transition: all 500ms !important;
     transition-delay: 0 !important;
+}
+
+@media all and (max-width: 700px) {
+    .switch-mode-label {
+        width: 80px;
+        height: 40px;
+    }
+    
+    .switch-mode-label:after {
+        width: 40px;
+        height: 40px;
+    }
+
+    .switch-mode-label:active:after {
+        width: 60px;
+    }
 }
