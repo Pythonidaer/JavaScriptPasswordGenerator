@@ -42,7 +42,8 @@ Function Center
 function generatePassword() {
 
     // Declares local variable searching for all four checkboxes to determine which are checked
-    let checkedBoxes = document.querySelectorAll(`input[type="checkbox"]:checked`);
+//     let checkedBoxes = document.querySelectorAll(`input[type="checkbox"]:checked`);
+    let checkedBoxes = document.querySelectorAll(`input[type="checkbox"]:checked.my-checkbox`);
     // Assigns string value of range slider at time 'Generate!' button is clicked; used to multiply randomized characters length
     passwordLength = document.getElementById('passwordLength').value;
     // Declares empty array that will store random characters added to it, to then be concatenated into one long string 
