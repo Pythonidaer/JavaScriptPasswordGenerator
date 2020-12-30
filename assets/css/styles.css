@@ -176,7 +176,8 @@ button:hover, button:active, button:focus {
 /* Dark mode */
 html {
     /* Light version */
-    --bg: url(../images/snowlight.jpeg) no-repeat;
+    --bg-body: #4db6ac;
+    --bg-image: url(../images/snowlight.jpeg);
     --bg-toggler: #37474f;
     --bg-headings: #37474f;
     --bg-card: #fcfcfc;
@@ -190,7 +191,8 @@ html {
 
 html[data-theme='dark'] {
     /* Dark version */
-    --bg: url(../images/snowdark.jpg) no-repeat;
+    --bg-body: #37474f;
+    --bg-image: url(../images/snowdark.jpg);
     --bg-toggler: #4db6ac;
     --bg-headings: #4db6ac;
     --bg-card: #333333;
@@ -203,7 +205,9 @@ html[data-theme='dark'] {
 }
 
 body {
-    background: var(--bg);
+    background-color: var(--bg-body);
+    background-image: var(--bg-image);
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -239,6 +243,7 @@ Changes necessary:
 - specify alert text color because right now it's become white
 - maybe give modal var colors also
 - consider changing checked box colors too
+- test changing h2 bg to dark green and text to white
 
 */
 
