@@ -114,10 +114,10 @@ input[type=range] + .thumb.active .value {
     color: #dedede;
 }
 
-/* increases height of each box */
+/* increases height of each box
 .card {
     min-height: 150px;
-}
+} */
 
 /* adds side padding */
 div.inner {
@@ -179,6 +179,7 @@ html {
     --bg: url(../images/snowlight.jpeg) no-repeat;
     --bg-toggler: #37474f;
     --bg-headings: #37474f;
+    --bg-card: #fcfcfc;
     --color-heading-1: #37474f;
     --color-heading-2: #ffffff;
     --color-text: #333333;
@@ -192,9 +193,10 @@ html[data-theme='dark'] {
     --bg: url(../images/snowdark.jpg) no-repeat;
     --bg-toggler: #4db6ac;
     --bg-headings: #4db6ac;
+    --bg-card: #333333;
     --color-heading-1: #fcfcfc;
     --color-heading-2: #37474f;
-    --color-text: #333333;
+    --color-text: #fcfcfc;
 
     /* Dark version */
 
@@ -221,12 +223,31 @@ h2 {
     margin-bottom: 0;
 }
 
-p {
+/* increases height of each box */
+.card {
+    min-height: 150px;
+    background: var(--bg-card);
+}
+
+span, p {
+    color: var(--color-text);
+}
+
+/* 
+Changes necessary:
+- button in dark mode
+- specify alert text color because right now it's become white
+- maybe give modal var colors also
+- consider changing checked box colors too
+
+*/
+
+/* p {
     color: var(--color-text);
     font-size: 1.1em;
     line-height: 1.8em;
     margin-top: 2em;
-}
+} */
 
 .switch-mode-toggler[type=checkbox]{
 	height: 0;
