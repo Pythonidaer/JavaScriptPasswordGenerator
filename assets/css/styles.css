@@ -1,31 +1,196 @@
+/* ===================================================================================
+Dark Mode Color Variables
+=================================================================================== */
+html {
+    /* Light version */
+    --bg-body: #4db6ac;
+    --bg-image: url(../images/snowlight.jpeg);
+    --bg-toggler: #006064;
+    --bg-headings: #37474f;
+    --bg-card: #fcfcfc;
+    --btn-custom: #006064;
+    --btn-hover: #4db6ac;
+    --checked-box: #006064;
+    --color-heading-1: #37474f;
+    --color-heading-2: #ffffff;
+    --color-text: #333333;
+    --range-slider: #006064;
+    --range-thumb: #006064;
+}
+
+html[data-theme='dark'] {
+    /* Dark version */
+    --bg-body: #37474f;
+    --bg-image: url(../images/snowdark.jpg);
+    --bg-toggler: #880e4f;
+    --bg-headings: #880e4f;
+    --bg-card: #333333;
+    --btn-custom: #ab47bc;
+    --btn-hover: #8e24aa;
+    --checked-box: #ab47bc;
+    --color-heading-1: #fcfcfc;
+    --color-heading-2: #f3e5f5;
+    --color-text: #fcfcfc;
+    --error-text: #37474f;
+    --range-slider: #ab47bc;
+    --range-thumb: #ab47bc;
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+    transition: all 500ms ease-in-out !important;
+    transition-delay: 0 !important;
+}
+
+/* Background winter snow with default bg-color*/
+body {
+    background-color: var(--bg-body);
+    background-image: var(--bg-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /* So background photo covers entire viewport */
 html, body {
     min-height: 100%;
 }
 
-/* Background winter snow */
-body {
-    /* background: url(https://images.pexels.com/photos/1571442/pexels-photo-1571442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat; */
-    /* background-size: cover; */
+span, p {
+    color: var(--color-text);
 }
 
-/* ===================================================================================
-Dark Mode
-=================================================================================== */
-
-span {
-    color: #263238;
+/* so very longer passwords don't break out of the box */
+p {
+    overflow-wrap: break-word;
 }
 
-/* Card header styling courtesy of https://jenniferkirwin.github.io/password-generator2/ */
+h1 {
+    color: var(--color-heading-1);
+}
+
+/* Card header styling influenced by https://jenniferkirwin.github.io/password-generator2/ */
 h2 {
     display: block;
     padding: 15px;
     font-size: 16px;
-    background-color: #37474f;
-    color: #ffffff;
+    background-color: var(--bg-headings);
+    color: var(--color-heading-2);
     font-weight: bold;
     margin-bottom: 0;
+}
+
+/* increases height of each box */
+.card {
+    min-height: 150px;
+    background: var(--bg-card);
+}
+
+.card:last-of-type {
+    margin-bottom: 2rem;
+}
+
+
+/* ===================================================================================
+CHECKBOXES
+=================================================================================== */
+/* custom style to override Materialize checkbox styles */
+[type="checkbox"].filled-in:checked + span:not(.lever):after {
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--checked-box);
+    background-color: var(--checked-box);
+    z-index: 0;
+}
+/* adds hover shadow to checkbox */
+label [type="checkbox"].filled-in:hover + span:not(.lever):after,
+label [type="checkbox"].filled-in:focus + span:not(.lever):after {
+    box-shadow: 2px 2px 3px #9e9e9e !important;
+}
+
+
+/* ===================================================================================
+RANGE SLIDER
+=================================================================================== */
+/* for some reason only works separately - this changes color of the slider circle */
+input[type=range]::-webkit-slider-thumb {
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    background: var(--range-slider);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -13px;
+  }
+
+input[type=range]::-moz-range-thumb {
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    background: var(--range-slider);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -13px;
+  }
+
+input[type=range]::-ms-thumb {
+    height: 30px;
+    width: 30px;
+    background: var(--range-slider);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -13px;
+  }
+
+/* overrides the thumb and the text inside the thumb */
+input[type=range] + .thumb {
+    background-color:#006064 ;
+    background-color:var(--range-thumb);
+}
+input[type=range] + .thumb.active .value {
+    color: #dedede;
+}
+
+/* adds side padding */
+div.inner {
+    padding: 0 15px 0 15px;
+}
+
+/* overrides Materialize spacing */
+.row {
+    margin-bottom: 0;
+}
+
+/* centers box exactly horizontally and vertically */
+.centricated {
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+    justify-content: center;
+}
+
+/* overrides Materialize cyan color */
+.btn-custom {
+    background-color: var(--btn-custom);
+}
+
+button:hover, button:active, button:focus {
+    background-color: var(--btn-hover) !important;
+}
+
+
+/* ===================================================================================
+Modal
+=================================================================================== */
+/* Modal represents error of not selecting checkboxes and needs to survive darkmode color switch */
+h2.error {
+    color: var(--color-text)
+}
+
+p.error-text {
+    color: var(--error-text);
 }
 
 /* overrides Materialize modal positioning and width */
@@ -60,98 +225,6 @@ h2 {
     opacity: 0.7 !important;
 }
 
-/* custom style to override Materialize checkbox styles */
-[type="checkbox"].filled-in:checked + span:not(.lever):after {
-    top: 0;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #006064;
-    background-color: #006064;
-    z-index: 0;
-}
-/* adds hover shadow to checkbox */
-label [type="checkbox"].filled-in:hover + span:not(.lever):after,
-label [type="checkbox"].filled-in:focus + span:not(.lever):after {
-    box-shadow: 2px 2px 3px #9e9e9e !important;
-}
-
-/* for some reason only works separately - this changes color of the slider circle */
-input[type=range]::-webkit-slider-thumb {
-    height: 30px;
-    width: 30px;
-    border-radius: 30px;
-    background: #006064;
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -13px;
-  }
-
-input[type=range]::-moz-range-thumb {
-    height: 30px;
-    width: 30px;
-    border-radius: 30px;
-    background: #006064;
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -13px;
-  }
-
-input[type=range]::-ms-thumb {
-    height: 30px;
-    width: 30px;
-    border-radius: 30px;
-    background: #006064;
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -13px;
-  }
-
-/* overrides the thumb and the text inside the thumb */
-input[type=range] + .thumb {
-    background-color:#006064 ;
-}
-input[type=range] + .thumb.active .value {
-    color: #dedede;
-}
-
-/* increases height of each box
-.card {
-    min-height: 150px;
-} */
-
-/* adds side padding */
-div.inner {
-    padding: 0 15px 0 15px;
-}
-
-/* overrides Materialize spacing */
-.row {
-    margin-bottom: 0;
-}
-
-/* so very longer passwords don't break out of the box */
-p {
-    overflow-wrap: break-word;
-}
-
-/* centers box exactly horizontally and vertically */
-.centricated {
-    display: flex;
-    flex-direction: column;
-    min-height: 100px;
-    justify-content: center;
-}
-
-/* overrides Materialize cyan color */
-.cyan-custom {
-    background-color: #006064;
-}
-
-/* custom button:hover color */
-button:hover, button:active, button:focus {
-    background-color: #4db6ac     !important;
-}
-
 /* overrides Materialize grey color */
 .modal-close.btn:hover,
 .modal-close.btn:active,
@@ -173,91 +246,16 @@ button:hover, button:active, button:focus {
     }
 }
 
-/* Dark mode */
-html {
-    /* Light version */
-    --bg-body: #4db6ac;
-    --bg-image: url(../images/snowlight.jpeg);
-    --bg-toggler: #37474f;
-    --bg-headings: #37474f;
-    --bg-card: #fcfcfc;
-    --color-heading-1: #37474f;
-    --color-heading-2: #ffffff;
-    --color-text: #333333;
 
-    /* Dark version */
-
-}
-
-html[data-theme='dark'] {
-    /* Dark version */
-    --bg-body: #37474f;
-    --bg-image: url(../images/snowdark.jpg);
-    --bg-toggler: #4db6ac;
-    --bg-headings: #4db6ac;
-    --bg-card: #333333;
-    --color-heading-1: #fcfcfc;
-    --color-heading-2: #37474f;
-    --color-text: #fcfcfc;
-
-    /* Dark version */
-
-}
-
-body {
-    background-color: var(--bg-body);
-    background-image: var(--bg-image);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
+/* ===================================================================================
+Dark Model Toggler
+=================================================================================== */
 .toggle-container {
     display: flex;
     justify-content: flex-end;
     padding: 0 .75rem 0;
     margin-top: 2rem;
 }
-
-h2 {
-    display: block;
-    padding: 15px;
-    font-size: 16px;
-    background-color: var(--bg-headings);
-    color: var(--color-heading-2);
-    font-weight: bold;
-    margin-bottom: 0;
-}
-
-/* increases height of each box */
-.card {
-    min-height: 150px;
-    background: var(--bg-card);
-}
-
-.card:last-of-type {
-    margin-bottom: 2rem;
-}
-
-span, p {
-    color: var(--color-text);
-}
-
-/* 
-Changes necessary:
-- button in dark mode
-- specify alert text color because right now it's become white
-- maybe give modal var colors also
-- consider changing checked box colors too
-- test changing h2 bg to dark green and text to white
-
-*/
-
-/* p {
-    color: var(--color-text);
-    font-size: 1.1em;
-    line-height: 1.8em;
-    margin-top: 2em;
-} */
 
 .switch-mode-toggler[type=checkbox]{
 	height: 0;
@@ -268,9 +266,7 @@ Changes necessary:
 .switch-mode-label {
 	cursor: pointer;
 	text-indent: -9999px;
-	/* width: 200px; */
 	width: 60px;
-	/* height: 100px; */
 	height: 30px;
 	background-color: var(--bg-toggler);
 	display: block;
@@ -281,11 +277,8 @@ Changes necessary:
 .switch-mode-label:after {
 	content: '';
 	position: absolute;
-	/* top: 5px; */
 	top: 0;
-	/* left: 5px; */
 	left: 0;
-	/* width: 90px; */
 	width: 30px;
 	height: 30px;
 	background: #fff;
@@ -298,29 +291,15 @@ Changes necessary:
 }
 
 .switch-mode-toggler:checked + .switch-mode-label:after {
-	/* left: calc(100% - 5px); */
 	left: calc(100%);
 	transform: translateX(-100%);
 }
 
 .switch-mode-label:active:after {
-	/* width: 130px; */
-	/* width: 20px; */
 	width: 45px;
 }
 
-h1 {
-    color: var(--color-heading-1);
-}
-
-html.transition,
-html.transition *,
-html.transition *:before,
-html.transition *:after {
-    transition: all 500ms !important;
-    transition-delay: 0 !important;
-}
-
+/* Changes size of dark-mode toggle for smaller screens */
 @media all and (max-width: 700px) {
     .switch-mode-label {
         width: 80px;

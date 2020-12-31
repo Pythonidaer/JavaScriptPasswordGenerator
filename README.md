@@ -44,6 +44,14 @@ This repo is simply a homework assignment. Feel free to inspect the code and not
 [Background Image Sizing](https://css-tricks.com/forums/topic/background-image-height-problem-not-fitting-to-the-screen/) Another great CSS Tricks article that helped me make sure the background-image covered the entire background.
 
 [CSS Portal](https://www.cssportal.com/style-input-range/) This website helped me change the size of the range slider in Materialize CSS.
+
+[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) Here I learned how to utilize the change event for sensing when a checkbox has been checked or unchecked.
+
+[CSS Tricks: Fallback Colors](https://css-tricks.com/css-basics-using-fallback-colors/) I learned how to fall back on background colors if/when my background images for some reason do not load.
+
+[MDN Docs: querySelectorAll](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll) Showed me how to further narrow my query so that I did not include toggle when I searched for checked boxes.
+
+[Marcus Burnette // Codepen](https://codepen.io/mburnette/pen/LxNxNg) I followed along Gary Simon's tutorial, where he styles dark mode based off this pen of a toggler made by Marcus.
   
 ## License
 I've chosen an MIT License. Do what you'd like with this material.

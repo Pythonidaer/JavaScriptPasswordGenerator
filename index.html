@@ -7,7 +7,6 @@
     Aspiring Full Stack Developer, LinkedIn: https://www.linkedin.com/in/jonamichahammo/">
         <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="assets/css/styles.css">
@@ -30,9 +29,8 @@
             <!-- Modal alert for when user doesn't select a character type-->
             <div id="userError" class="modal">
                 <div class="modal-content">
-                    <h2 class="red darken-4">Error: No Character Types Selected</h2>
-                    <p class="flow-text">Please select one or more <strong>character types</strong> to generate a random password with.</p>
-                    
+                    <h2 class="error red darken-4">Error: No Character Types Selected</h2>
+                    <p class="error-text flow-text">Please select one or more <strong>character types</strong> to generate a random password with.</p>
                 </div>
                 <div class="modal-footer modal-footer-inner">
                     <a href="#" class="modal-close btn cyan darken-4">I Understand</a>
@@ -108,12 +106,11 @@
                             <div class="centricated">
                                 <!-- Button to Generate Randomized Password -->
                                 <div class="inner center-align">
-                                    <button id="generateBtn" type="button" onclick="generatePassword()" class="btn-large cyan-custom waves-effect waves-light" href="#userError">
+                                    <button id="generateBtn" type="button" onclick="generatePassword()" class="btn-large btn-custom waves-effect waves-light" href="#userError">
                                         Generate and copy!
                                     </button>
                                 </div>
                             </div>
-  
                         </div>
                     </div>
                 </form>
@@ -129,7 +126,6 @@
                                 <div class="inner">
                                     <p id="completedPassword" class="flow-text">Nothing to see here yet!</p>
                                 </div>
-
                             </div>
                     </div>
                 </div>
@@ -140,8 +136,7 @@
         <!--  Scripts-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- Custom JavaSCript -->
-        <script src="assets/scripts/behavior.js"></script> 
-        <script src="assets/scripts/darkmode.js"></script> 
+        <script src="assets/scripts/behavior.js"></script>
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     </body>

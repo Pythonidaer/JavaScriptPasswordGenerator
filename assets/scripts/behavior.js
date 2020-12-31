@@ -29,9 +29,6 @@ var space = [];
 var selections;
 
 
-
-
-
 /*
 ==============================================================================
 Function Center
@@ -149,50 +146,42 @@ $(document).ready(function(){
         $('.modal').modal();
         });
         
+        
+/*
+==============================================================================
+Dark Mode Center
+==============================================================================
+*/
+// Specifically search for name=theme so other checkboxes are not selected
+var toggler = document.querySelector('input[name=theme]');
 
+// When checkbox (toggler) is changed (checked or unchecked) set HTML to data-theme dark or light.
+toggler.addEventListener('change', function() {
+    if(this.checked) {
+        trans()
+        document.documentElement.setAttribute('data-theme', 'dark')
+    } else {
+        trans()
+        document.documentElement.setAttribute('data-theme', 'light')
+    }
+})
+
+// Add transition only when user toggles dark and light mode.
+let trans = () => {
+    document.documentElement.classList.add('transition');
+    window.setTimeout(() => {
+        document.documentElement.classList.remove('transition')
+    }, 1000)
+}
 
 
 
  /*
 ==============================================================================
 Notes & Features Center
-==============================================================================
 
-1. Dark Mode:
-- I would like to make this have a button up top as this now appears to be a standard feature
-- 2 options: light & dark
-- Customizable in two ways: via browser settings, or by toggling after visiting the page
+1. This project could be improved upon by adding an option to hide the password after generation.
 
-
-2. Copy Password:
-- Might consider appending this to the 'Generate!' button (such as Generate and Copy!) else just store a new button
-
-
-3. Refactor Functions:
-- The selections array is assigned an array value fifteen times due to conditional outcomes above
-- I think the conditional center can be stored into a nested function that accepts 1-4 arguments
-- Watch 
-- Maybe something like this:
-
-function conditionalAbstract(variable.checked) {
-    if (1-4, any combination, checked) {
-        selections = space.concat(1-4)
-    } else {
-        alert error / refresh
-    }
-}
-
-- Followed by:
-
-conditionalAbstract()
-
-4. Modal made through Materialize CSS -- Complete (could be improved)
-- The alert() error appears for when the user generates without checking any boxes declaring character types to use
-- I want to utilize the Modal I found from the Materialize CSS Ninja playlist because I like that I can customize the modal
-
-5. Materialize CSS -- Complete (could be improved)
-- This is actually where I need to start off, because now that I have the javascript baseline complete, I need to make this pretty
-
-6. Make password hidden toggle with eye to signify asterisks
-
+2. Refactor Functions:
+  - This code can be re-factored to be less repetitive.
 */
