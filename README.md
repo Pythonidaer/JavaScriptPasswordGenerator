@@ -54,6 +54,8 @@ This repo is simply a homework assignment. Feel free to inspect the code and not
 [Marcus Burnette // Codepen](https://codepen.io/mburnette/pen/LxNxNg) I followed along Gary Simon's tutorial, where he styles dark mode based off this pen of a toggler made by Marcus.
 
 [Tiny PNG](https://tinypng.com/) This website allowed me to compress my background images and shave off over 2000 kilobytes!
+
+[Optimizilla](https://imagecompressor.com/)Here I was able to further reduce background image size from megabytes to <250kb each.
   
 ## License
 I've chosen an MIT License. Do what you'd like with this material.
