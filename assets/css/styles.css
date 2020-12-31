@@ -120,6 +120,7 @@ input[type=range]::-webkit-slider-thumb {
     width: 30px;
     border-radius: 30px;
     background: var(--range-slider);
+    transition: all 500ms !important;
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -13px;
@@ -130,6 +131,7 @@ input[type=range]::-moz-range-thumb {
     width: 30px;
     border-radius: 30px;
     background: var(--range-slider);
+    transition: all 500ms !important;
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -13px;
@@ -139,6 +141,7 @@ input[type=range]::-ms-thumb {
     height: 30px;
     width: 30px;
     background: var(--range-slider);
+    transition: all 500ms !important;
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -13px;
