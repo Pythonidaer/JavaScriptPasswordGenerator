@@ -189,7 +189,7 @@ Modal
 =================================================================================== */
 /* Modal represents error of not selecting checkboxes and needs to survive darkmode color switch */
 h2.error {
-    color: var(--color-text)
+    color: var(--color-heading-2)
 }
 
 p.error-text {
