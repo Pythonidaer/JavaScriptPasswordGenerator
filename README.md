@@ -52,6 +52,8 @@ This repo is simply a homework assignment. Feel free to inspect the code and not
 [MDN Docs: querySelectorAll](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll) Showed me how to further narrow my query so that I did not include toggle when I searched for checked boxes.
 
 [Marcus Burnette // Codepen](https://codepen.io/mburnette/pen/LxNxNg) I followed along Gary Simon's tutorial, where he styles dark mode based off this pen of a toggler made by Marcus.
+
+[Tiny PNG](https://tinypng.com/) This website allowed me to compress my background images and shave off over 2000 kilobytes!
   
 ## License
 I've chosen an MIT License. Do what you'd like with this material.
