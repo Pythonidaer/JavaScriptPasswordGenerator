@@ -4,7 +4,7 @@ Dark Mode Color Variables
 html {
     /* Light version */
     --bg-body: #4db6ac;
-    --bg-image: url(../images/snowlight.jpeg);
+    --bg-image: url(../images/snowlight-min.jpeg);
     --bg-toggler: #006064;
     --bg-headings: #37474f;
     --bg-card: #fcfcfc;
@@ -21,7 +21,7 @@ html {
 html[data-theme='dark'] {
     /* Dark version */
     --bg-body: #37474f;
-    --bg-image: url(../images/snowdark.jpg);
+    --bg-image: url(../images/snowdark-min.jpg);
     --bg-toggler: #880e4f;
     --bg-headings: #880e4f;
     --bg-card: #333333;
