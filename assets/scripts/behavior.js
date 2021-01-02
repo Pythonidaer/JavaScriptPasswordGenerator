@@ -12,16 +12,16 @@ var uppercaseChar = document.getElementById('uppercaseChar');
 var numericChar = document.getElementById('numericChar');
 var specialChar = document.getElementById('specialChar');
 
-// Builds arrays for Special, Number, and Lowercase Characters
-specialCharacters = [` `, `!`, `"`, `#`, `$`, `%`, `&`, `'`, `(`, `)`, `*`, `+`, `,`, `-`, `.`, `/`, `:`, `;`, `<`, `=`, `>`, `?`, `@`, `\[`, `\\`, `\]`, `^`, `_`, `\``, `{`, `|`, `}`, `~`];
-number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-lowercaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+// Builds Arrays for special, number, and lowercase Characters
+sArr = [` `, `!`, `"`, `#`, `$`, `%`, `&`, `'`, `(`, `)`, `*`, `+`, `,`, `-`, `.`, `/`, `:`, `;`, `<`, `=`, `>`, `?`, `@`, `\[`, `\\`, `\]`, `^`, `_`, `\``, `{`, `|`, `}`, `~`];
+nArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+lArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 // Declares function to return string values converte to Uppercase Characters
 var toUpperCase = function (x) {
     return x.toUpperCase();
 };
-// Maps Lowercase Characters turned Uppercase to a new array
-uppercaseLetters = lowercaseLetters.map(toUpperCase);
+// Maps lowercase Array turned uppercase to a new array
+uArr = lArr.map(toUpperCase);
 
 // Declares empty array that will store Character Types the user selects by clicking checkboxes
 var space = [];
@@ -39,7 +39,7 @@ Function Center
 function generatePassword() {
 
     // Declares local variable searching for all four checkboxes to determine which are checked
-//     let checkedBoxes = document.querySelectorAll(`input[type="checkbox"]:checked`);
+    // let checkedBoxes = document.querySelectorAll(`input[type="checkbox"]:checked`);
     let checkedBoxes = document.querySelectorAll(`input[type="checkbox"]:checked.my-checkbox`);
     // Assigns string value of range slider at time 'Generate!' button is clicked; used to multiply randomized characters length
     passwordLength = document.getElementById('passwordLength').value;
@@ -57,63 +57,41 @@ function generatePassword() {
     ==============================================================================
     */
 
-    // Alerts user to select 1+ checkboxes, then refreshes the page
-    if (checkedBoxes.length == 0) {
-        document.getElementById('generateBtn').classList.add('modal-trigger');
-        // alert('Please select one or more character types.')
-        // location.reload();
-    }  else {
-        document.getElementById('generateBtn').classList.remove('modal-trigger');
-    }
+    // If all char types unchecked, make alert modal popup; else hide modal.
+    (checkedBoxes.length == 0) && (document.getElementById('generateBtn').classList.add('modal-trigger')) ||
+    (checkedBoxes.length !== 0) && (document.getElementById('generateBtn').classList.remove('modal-trigger'));
+    // If alert modal pops up, explain the TypeError within the console.     
+    (document.getElementById('generateBtn').classList.contains('modal-trigger')) && (console.log(`%cThis is an expected error that only appears when the user does'nt choose 1 or more character checkboxes.`, `color: #66ff00;`))
 
-    // If all 4 boxes are checked, selections array becomes one long array of letters, numbers and special characters
-    if (lowercaseChar.checked && uppercaseChar.checked && numericChar.checked && specialChar.checked) {
-            selections = space.concat(specialCharacters, number, lowercaseLetters, uppercaseLetters)
-    }  
-    
-    // If any 3 boxes are checked, selections array becomes one long array of those 3 options
-    else if (specialChar.checked && numericChar.checked && uppercaseChar.checked) {
-            selections = space.concat(specialCharacters, number, uppercaseLetters);
-    }  else if (specialChar.checked && numericChar.checked && lowercaseChar.checked) {
-            selections = space.concat(specialCharacters, number, lowercaseLetters);
-    }  else if (specialChar.checked && lowercaseChar.checked && uppercaseChar.checked) {
-            selections = space.concat(specialCharacters, lowercaseLetters, uppercaseLetters);
-    }  else if (numericChar.checked && lowercaseChar.checked && uppercaseChar.checked) {
-            selections = space.concat(number, lowercaseLetters, uppercaseLetters);
-    }  
-    
-    // If any 2 boxes are checked, selections array becomes one long array of those 2 options
-    else if (specialChar.checked && numericChar.checked) {
-            selections = space.concat(specialCharacters, number);
-    }  else if (specialChar.checked && lowercaseChar.checked) {
-            selections = space.concat(specialCharacters, lowercaseLetters);
-    }  else if (specialChar.checked && uppercaseChar.checked) {
-            selections = space.concat(specialCharacters, uppercaseLetters);
-    }  else if (lowercaseChar.checked && numericChar.checked) {
-            selections = space.concat(lowercaseLetters, number);
-    }  else if (lowercaseChar.checked && uppercaseChar.checked) {
-            selections = space.concat(lowercaseLetters, uppercaseLetters);
-    }  else if (numericChar.checked && uppercaseChar.checked) {
-            selections = space.concat(number, uppercaseLetters);
-    }  
-    
-    // If only 1 box is checked, selections array is assigned the value of that Character Array
-    else if (specialChar.checked) {
-            selections = space.concat(specialCharacters);
-    }  else if (numericChar.checked) {
-            selections = space.concat(number);
-    }  else if (lowercaseChar.checked) {
-            selections = space.concat(lowercaseLetters);
-    }  else if (uppercaseChar.checked) {
-            selections = space.concat(uppercaseLetters);
-    }
+    // Assigns shorthand to checked boxes; NOTE: each will result in either true or false (see: Declaration Center for more context)
+    let s = specialChar.checked;
+    let n = numericChar.checked;
+    let l = lowercaseChar.checked;
+    let u = uppercaseChar.checked;
+
+    // (if 1+ boxes checked) then (empty array concatenated w/ corresponding character arrays)
+    (s && n && l && u) && (selections = space.concat(sArr, nArr, lArr, uArr)) ||
+    (s && n && u) && (selections = space.concat(sArr, nArr, uArr)) ||
+    (s && n && l) && (selections = space.concat(sArr, nArr, lArr)) ||
+    (s && l && u) && (selections = space.concat(sArr, lArr, uArr)) ||
+    (n && l && u) && (selections = space.concat(nArr, lArr, uArr)) ||
+    (s && n) && (selections = space.concat(sArr, nArr)) ||
+    (s && l) && (selections = space.concat(sArr, lArr)) ||
+    (s && u) && (selections = space.concat(sArr, uArr)) ||
+    (l && n) && (selections = space.concat(lArr, nArr)) ||
+    (l && u) && (selections = space.concat(lArr, uArr)) ||
+    (n && u) && (selections = space.concat(nArr, uArr)) ||
+    (s) && (selections = space.concat(sArr)) ||
+    (l) && (selections = space.concat(lArr)) ||
+    (n) && (selections = space.concat(nArr)) ||
+    (u) && (selections = space.concat(uArr))
 
     // initializes i at 0; if i is less than passwordLength (string coerced to number); increase i by 1)
     // During for loop, assign a random element from selections array to randomizeSelections, then push it to the password array
     for (var i = 0; i < passwordLength; i++) {
         randomizeSelections = selections[Math.floor(Math.random() * selections.length)];
         password.push(randomizeSelections);
-    }
+    }l
 
     // Takes the array of random characters, joins and returns them, so that the (8-128) elements become one singular element 
     generatedPassword = password.join("");
@@ -121,16 +99,16 @@ function generatePassword() {
     writePassword(generatedPassword);
     // Copies password after generating it
     copyPassword();
-    }
+    };
 
-// This will change the text content of a pargraph or textarea element to the password generated above, for display/copy purposes.
-function writePassword(generatedPassword) {
-    document.getElementById("completedPassword").textContent = generatedPassword;
-    document.getElementById("completedPassword").placeholder = generatedPassword;
- }
+    // This will change the text content of a pargraph or textarea element to the password generated above, for display/copy purposes.
+    function writePassword(generatedPassword) {
+        document.getElementById("completedPassword").textContent = generatedPassword;
+        document.getElementById("completedPassword").placeholder = generatedPassword;
+    };
 
-//  Grabs password text, creates a placeholder, pastes text into placeholder, copies placeholder text, and lastly removes placeholder
- function copyPassword() {
+    // Grabs password text, creates a placeholder, pastes text into placeholder, copies placeholder text, and lastly removes placeholder
+    function copyPassword() {
         let completedPassword = document.getElementById('completedPassword').textContent;
         let placeholder = document.createElement(`textarea`);
         document.body.appendChild(placeholder);
@@ -138,7 +116,7 @@ function writePassword(generatedPassword) {
         placeholder.select();
         document.execCommand(`copy`);
         document.body.removeChild(placeholder);
-      };
+    };
 
       
 // When document is ready, this jQuery function will call the modal function.
@@ -166,7 +144,7 @@ toggler.addEventListener('change', function() {
     }
 })
 
-// Add transition only when user toggles dark and light mode.
+// Add transition to HTML only when user toggles dark and light mode, then remove a second later.
 let trans = () => {
     document.documentElement.classList.add('transition');
     window.setTimeout(() => {
@@ -175,13 +153,16 @@ let trans = () => {
 }
 
 
-
- /*
+/*
 ==============================================================================
-Notes & Features Center
+Suggested Improvements:
+==============================================================================
+*/
 
-1. This project could be improved upon by adding an option to hide the password after generation.
+/*
+1. Remove '& Copy' from Generate button and make a clipboard icon to make more intuitive and explicit.
 
-2. Refactor Functions:
-  - This code can be re-factored to be less repetitive.
+2. Create a feature that displays random password in asterisks, with an eyeball icon to indicate view/hide toggle.
+
+3. Refactor 15 conditionals (checkbox options) into a function / use objects to achieve DRY methodology.
 */

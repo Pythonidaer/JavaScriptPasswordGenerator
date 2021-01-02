@@ -56,6 +56,12 @@ This repo is simply a homework assignment. Feel free to inspect the code and not
 [Tiny PNG](https://tinypng.com/) This website allowed me to compress my background images and shave off over 2000 kilobytes!
 
 [Optimizilla](https://imagecompressor.com/)Here I was able to further reduce background image size from megabytes to <250kb each.
+
+[Check if an Element contains a Class](https://www.javascripttutorial.net/dom/css/check-if-an-element-contains-a-class/) Uses .contains() method.
+
+[Jennifer Kirwin](https://jenniferkirwin.github.io/password-generator2/) Jennifer's brilliant styles influenced me on utilizing Materialize CSS. Hopefully someday I'll understand what she did with arrays as well! Definitely worth reading her code.
+
+[Jamie Rachael](https://jamierachael.github.io/Password-Generator/) Jamie's custom design first encouraged me to improve the original template provided to us. I also really liked her 'Copy to Clipboard' feature, but in the interest of trying something new, I combined 'Generate' and 'Copy' into one button on my project.
   
 ## License
 I've chosen an MIT License. Do what you'd like with this material.
