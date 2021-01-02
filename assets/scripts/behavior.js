@@ -61,7 +61,7 @@ function generatePassword() {
     (checkedBoxes.length == 0) && (document.getElementById('generateBtn').classList.add('modal-trigger')) ||
     (checkedBoxes.length !== 0) && (document.getElementById('generateBtn').classList.remove('modal-trigger'));
     // If alert modal pops up, explain the TypeError within the console.     
-    (document.getElementById('generateBtn').classList.contains('modal-trigger')) && (console.log(`%cThis is an expected error that only appears when the user does'nt choose 1 or more character checkboxes.`, `color: #66ff00;`))
+    (document.getElementById('generateBtn').classList.contains('modal-trigger')) && (console.log(`%cThis is an expected error that only appears when the user doesn't choose 1 or more character checkboxes.`, `color: #66ff00;`))
 
     // Assigns shorthand to checked boxes; NOTE: each will result in either true or false (see: Declaration Center for more context)
     let s = specialChar.checked;
