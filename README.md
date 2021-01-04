@@ -1,12 +1,6 @@
 # JavaScriptPasswordGenerator
 *My Random Password Generator made with JavaScript and Materialize CSS*
 
-UPDATES:
-
-1. Needs on Dark Mode
-2. JavaScript conditionals can be re-factored into a functional component
-3. Working on a Medium article
-
 [View Deployed Application Here.](https://pythonidaer.github.io/JavaScriptPasswordGenerator/)
 
 ## Installation
